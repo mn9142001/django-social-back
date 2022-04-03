@@ -28,7 +28,7 @@ SECRET_KEY = 'KbPeShVmYq3t6w9y$B&E)H@McQfTjWnZr4u7x!A%C*F-JaNdRgUkXp2s5v8y/B?E(G
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-CSRF_TRUSTED_ORIGINS=['https://django-social-media-back.herokuapp.com/']
+CSRF_TRUSTED_ORIGINS=['https://django-social-media-back.herokuapp.com']
 ALLOWED_HOSTS = ['django-social-media-back.herokuapp.com', '192.168.1.7']
 AUTH_USER_MODEL = 'user.User'
 
