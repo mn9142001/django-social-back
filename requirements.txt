@@ -18,7 +18,6 @@ django-cors-headers==3.11.0
 django-templated-mail==1.1.1
 djangorestframework==3.13.1
 djangorestframework-simplejwt==4.8.0
-djoser==2.1.0
 hyperlink==21.0.0
 idna==3.3
 incremental==21.3.0
@@ -43,8 +42,6 @@ social-auth-app-django==5.0.0
 social-auth-core==4.2.0
 sqlparse==0.4.2
 toml==0.10.2
-Twisted==22.1.0
-twisted-iocpsupport==1.0.2
 txaio==21.2.1
 typing_extensions==4.1.0
 tzdata==2021.5
