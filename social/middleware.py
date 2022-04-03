@@ -5,8 +5,6 @@ from jwt import decode as jwt_decode
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from channels.db import database_sync_to_async
-from channels.middleware import BaseMiddleware
-from django.contrib.auth.models import AnonymousUser
 @database_sync_to_async
 def get_user(validated_token):
     try:
@@ -26,6 +24,8 @@ class TokenAuthMiddleware():
         try:
             UntypedToken(token)
         except (InvalidToken, TokenError) as e:
+            print(e)
+            print("returned")
             return None
         else:
             decoded_data = jwt_decode(token, settings.SECRET_KEY, algorithms=["HS256"])

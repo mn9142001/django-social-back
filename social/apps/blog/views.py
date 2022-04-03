@@ -52,7 +52,6 @@ class CommentViewSet(ViewSet):
 				comment = serial.save(author=request.user, drag=_comment)
 
 			if request.data.get('media'):
-				print(request.data.get('media'))
 				file = SnippetFile.objects.create(media=request.data.get('media'))
 				comment.media.add(file)
 			respo['comment'] = CommentSerializer(comment, context={'user': request.user}).data
@@ -61,7 +60,7 @@ class CommentViewSet(ViewSet):
 
 	def retrieve(self, request, pk):
 		post = Post.objects.get(pk=pk)
-		comments = post.post_comments.all()[:10]
+		comments = post.post_comments.all().order_by('-id')[:10]
 		return Response({'comments': CommentSerializer(comments, context={'user': request.user}, many=True).data})
 
 

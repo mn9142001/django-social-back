@@ -7,6 +7,7 @@ class GeneralConsumer(AsyncWebsocketConsumer):
 	async def connect(self):
 		self.userID = self.scope['user'].id
 		self.room_group_name = str('general_{0}'.format(self.userID))
+		print(self.room_group_name)
 		await self.channel_layer.group_add(
 			self.room_group_name,
 			self.channel_name
